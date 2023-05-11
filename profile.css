@@ -1,0 +1,73 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    min-height: 180px;
+    padding: 0;
+    width: 480px;
+}
+
+h1 {
+    font-family: "Menlo", monospace;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+    color: #2e165b;
+}
+
+.form-control {
+    padding-left: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border-collapse: separate;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.input-group {
+    border-top-left-radius: 100em;
+}
+
+.input-group-text {
+    border-radius: 20px 20px 20px 20px !important;
+    margin-right: 0.4em;
+}
+
+a:link,
+a:visited {
+    color: #000000;
+    outline: 0;
+    text-decoration: none;
+}
+
+.btn {
+    border-radius: 24px!important;
+    width: 12em;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+img {
+    padding: 2px;
+    width: 1.1em;
+    height: 1.1em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.app-title {
+    margin-left: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
