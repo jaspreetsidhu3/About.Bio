@@ -1,7 +1,7 @@
 var textEditor = document.getElementById('textEditor');
 var copy_button = document.getElementById('copy');
 
-let userdetailsKey = ["username", "phonenumber", "mail", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
+let userdetailsKey = ["username", "phonenumber", "mail", "portfolio", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
 chrome.storage.local.get(userdetailsKey, function(userdetails) {
     console.log("getting userdetails value..");
     var userData = "";
@@ -13,6 +13,8 @@ chrome.storage.local.get(userdetailsKey, function(userdetails) {
             userData += 'Contact: ' + userdetails.phonenumber + "\n";
         if (userdetails.mail)
             userData += 'Mail: ' + userdetails.mail + "\n";
+        if (userdetails.portfolio)
+            userData += 'Portfolio: ' + userdetails.portfolio + "\n";
         if (userdetails.facebook)
             userData += 'Facebook: ' + userdetails.facebook + "\n";
         if (userdetails.linkedIn)

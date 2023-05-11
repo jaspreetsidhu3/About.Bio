@@ -1,7 +1,7 @@
 // DOM
 var usernameGreet = document.getElementById('greetings');
 var phonenumberInput = document.getElementById('phonenumber');
-var mailInput = document.getElementById('mail');
+var portfolioInput = document.getElementById('portfolio');
 var facebookInput = document.getElementById('facebook');
 var instagramInput = document.getElementById('instagram');
 var twitterInput = document.getElementById('twitter');
@@ -11,7 +11,7 @@ var telegramInput = document.getElementById('telegram');
 var youtubeInput = document.getElementById('youtube');
 var linkedInInput = document.getElementById('linkedIn');
 
-let userDetailsKey = ["username", "phonenumber", "mail", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
+let userDetailsKey = ["username", "phonenumber", "mail", "portfolio", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
 chrome.storage.local.get(userDetailsKey, function(links) {
     if (!chrome.runtime.error) {
         console.log(links);
@@ -28,8 +28,8 @@ chrome.storage.local.get(userDetailsKey, function(links) {
             });
         }
 
-        if (links.mail) {
-            mailInput.href = links.mailInput;
+        if (links.portfolio) {
+            portfolioInput.href = links.portfolio;
         } else {
             mailInput.addEventListener('click', function(event) {
                 event.preventDefault();

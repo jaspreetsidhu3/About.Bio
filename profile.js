@@ -2,6 +2,7 @@
 var usernameInput = document.getElementById('username');
 var phonenumberInput = document.getElementById('phonenumber');
 var mailInput = document.getElementById('mail');
+var portfolioInput = document.getElementById('portfolio');
 var facebookInput = document.getElementById('facebook');
 var instagramInput = document.getElementById('instagram');
 var twitterInput = document.getElementById('twitter');
@@ -13,7 +14,7 @@ var linkedInInput = document.getElementById('linkedIn');
 
 var save_button = document.getElementById('save');
 
-let userdetailsKey = ["username", "phonenumber", "mail", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
+let userdetailsKey = ["username", "phonenumber", "mail", "portfolio", "facebook", "instagram", "twitter", "discord", "snapchat", "telegram", "youtube", "linkedIn"];
 chrome.storage.local.get(userdetailsKey, function(userdetails) {
     console.log("getting userdetails value..");
     if (!chrome.runtime.error) {
@@ -24,6 +25,8 @@ chrome.storage.local.get(userdetailsKey, function(userdetails) {
             phonenumberInput.value = userdetails.phonenumber;
         if (userdetails.mail)
             mailInput.value = userdetails.mail;
+        if (userdetails.portfolio)
+            portfolioInput.value = userdetails.portfolio;
         if (userdetails.facebook)
             facebookInput.value = userdetails.facebook;
         if (userdetails.instagram)
@@ -57,6 +60,7 @@ function saveLinks() {
             "username": usernameInput.value,
             "phonenumber": phonenumberInput.value,
             "mail": mailInput.value,
+            "portfolio": portfolioInput.value,
             "facebook": facebookInput.value,
             "instagram": instagramInput.value,
             "twitter": twitterInput.value,
@@ -81,7 +85,7 @@ function saveLinks() {
 
 function validateURLs() {
     var re = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
-    var inputFields = [mailInput, facebookInput, instagramInput, twitterInput, linkedInInput, discordInput, snapchatInput, telegramInput, youtubeInput];
+    var inputFields = [portfolioInput, facebookInput, instagramInput, twitterInput, linkedInInput, discordInput, snapchatInput, telegramInput, youtubeInput];
     for (var i = 0; i < inputFields.length; i++) {
         if (!re.test(inputFields[i].value)) {
             if (inputFields[i].value) {
