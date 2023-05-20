@@ -31,7 +31,7 @@ chrome.storage.local.get(userDetailsKey, function(links) {
         if (links.portfolio) {
             portfolioInput.href = links.portfolio;
         } else {
-            mailInput.addEventListener('click', function(event) {
+            portfolioInput.addEventListener('click', function(event) {
                 event.preventDefault();
             });
         }
